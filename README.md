@@ -73,7 +73,7 @@ Log in to your Heroku account and create a new app:
 ```bash
 heroku login
 heroku create your-app-name
-
+```
 
 # Streamlit App Deployment on Heroku
 
@@ -84,13 +84,7 @@ Make sure you have the Heroku CLI installed. Then run the following command to a
 
 ```bash
 heroku git:remote -a your-app-name
-
-## 1. Add a Git Remote for Heroku
-
-Make sure you have the Heroku CLI installed. Then run the following command to add your Heroku app as a remote:
-
-```bash
-heroku git:remote -a your-app-name
+```
 
 ## 2. Prepare for Deployment
 
@@ -99,5 +93,46 @@ Ensure the following files are in the root directory of your project:
 setup.sh: This file contains configuration steps for your app.
 Procfile: Tells Heroku how to run your application.
 requirements.txt: Lists all the required Python libraries.
-3. Deploy the App
+
+## 3. Deploy the App
+
 Commit your changes and push them to Heroku using the following commands:
+
+```bash
+git add .
+git commit -m "Initial commit"
+git push heroku master
+```
+
+## 4. Open the Deployed App
+
+Once the app is deployed, you can open it using the following command:
+
+```bash
+heroku open
+```
+
+## 5. Configuring the App
+
+Heroku needs to know how to handle certain configurations for Streamlit. The setup.sh file will handle creating necessary configurations for the app:
+
+```bash
+mkdir -p ~/.streamlit/
+echo "\
+[server]\n\
+port = \$PORT\n\
+enableCORS = false\n\
+headless = true\n\
+\n\
+" > ~/.streamlit/config.toml
+```
+
+Ensure the Procfile contains the following to launch the app with gunicorn:
+
+```bash
+web: gunicorn app:app
+```
+
+
+Feel free to reach out for any questions or contributions!
+
