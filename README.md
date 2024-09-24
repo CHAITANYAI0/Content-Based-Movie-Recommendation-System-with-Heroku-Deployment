@@ -1,6 +1,11 @@
 # Content-Based-Movie-Recommendation-System-with-Heroku-Deployment
 
+
 This repository contains the implementation of a Movie Recommender System using Streamlit. The model recommends movies to users based on their preferences.
+
+## Project Description
+
+The Movie Recommender System is a web-based application built using Streamlit that recommends movies based on user preferences. It leverages collaborative filtering and content-based filtering techniques to suggest movies. Users can interact with the model via a user-friendly interface to get movie recommendations. This project is ideal for those looking to build and deploy recommendation systems with Python and Streamlit.
 
 ## Table of Contents
 1. [Project Structure](#project-structure)
