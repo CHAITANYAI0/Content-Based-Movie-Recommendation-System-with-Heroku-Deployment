@@ -13,7 +13,7 @@ The Movie Recommender System is a web-based application built using Streamlit th
 3. [Installation](#installation)
 4. [Running the App Locally](#running-the-app-locally)
 5. [Deploying on Heroku](#deploying-on-heroku)
-6. [Author](#author)
+
 
 ## Project Structure
 Here is an overview of the files provided in this repository:
